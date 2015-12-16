@@ -132,7 +132,7 @@ func criticalRoll(command *bot.Cmd) (string, error) {
 	case "CV", "Vehicle", "SV", "Fahrzeug", "cv":
 		crit_hit = crit_vehicle[roll]
 		unitType = crit_vehicle[0]
-	case "ProtoMech", "Protomech", "protomech", "PM", "cv":
+	case "ProtoMech", "Protomech", "protomech", "PM":
 		crit_hit = crit_protomech[roll]
 		unitType = crit_protomech[0]
 	case "Aerospace", "aerospace", "Plane", "plane", "luft", "luft/raum", "jäger", "AS", "as":
@@ -152,6 +152,11 @@ func criticalRoll(command *bot.Cmd) (string, error) {
 func init() {
 	bot.RegisterCommand(
 		"critical@ASHelperBot",
+		"Roll for a critical hit for a unittype",
+		"unit-type",
+		criticalRoll)
+	bot.RegisterCommand(
+		"critical",
 		"Roll for a critical hit for a unittype",
 		"unit-type",
 		criticalRoll)
