@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/go-chat-bot/bot"
 	"math/rand"
+	"os"
 )
 
 func motivehit(command *bot.Cmd) (string, error) {
@@ -47,7 +48,7 @@ func init() {
 		"[h|n|s|t|v|w|g] (movement mode)",
 		motivehit)
 	bot.RegisterCommand(
-		"motive@ASHelperBot",
+		"motive@"+os.Getenv("TELEGRAM_BOTNAME"),
 		"makes a motive-systems-damage-roll",
 		"[h|n|s|t|v|w|g] (movement mode)",
 		motivehit)

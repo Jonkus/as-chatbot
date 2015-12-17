@@ -3,6 +3,7 @@ package asunitsearch
 import (
 	"github.com/go-chat-bot/bot"
 	"net/http"
+	"os"
 )
 
 func unitsearch(command *bot.Cmd) (string, error) {
@@ -26,7 +27,7 @@ func init() {
 		"unitname - the unit you search for",
 		unitsearch)
 	bot.RegisterCommand(
-		"search@ASHelperBot",
+		"search@"+os.Getenv("TELEGRAM_BOTNAME"),
 		"searches for a unit in the masterunitlist.info",
 		"unitname - the unit you search for",
 		unitsearch)

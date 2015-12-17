@@ -3,10 +3,11 @@ package asdiceroll
 import (
 	"github.com/go-chat-bot/bot"
 	"math/rand"
+	"os"
 	"testing"
 )
 
-func TestDicerollString(t *testing.T) {
+func TestDiceroll(t *testing.T) {
 	arg := ""
 	want := "(5 + 5) = 10"
 	bot := &bot.Cmd{
@@ -26,11 +27,11 @@ func TestDicerollString(t *testing.T) {
 	}
 }
 
-func TestDicerollAtASHelperBotString(t *testing.T) {
+func TestDicerollAtBotname(t *testing.T) {
 	arg := ""
 	want := "(5 + 5) = 10"
 	bot := &bot.Cmd{
-		Command: "diceroll@ASHelperBot",
+		Command: "diceroll@" + os.Getenv("TELEGRAM_BOTNAME"),
 		RawArgs: arg,
 	}
 

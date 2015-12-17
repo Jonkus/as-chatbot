@@ -5,6 +5,7 @@ import (
 	"github.com/go-chat-bot/bot"
 	"math/rand"
 	//"regexp"
+	"os"
 	"strings"
 )
 
@@ -151,7 +152,7 @@ func criticalRoll(command *bot.Cmd) (string, error) {
 
 func init() {
 	bot.RegisterCommand(
-		"critical@ASHelperBot",
+		"critical@"+os.Getenv("TELEGRAM_BOTNAME"),
 		"Roll for a critical hit for a unittype",
 		"unit-type",
 		criticalRoll)

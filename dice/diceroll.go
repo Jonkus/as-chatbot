@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/go-chat-bot/bot"
 	"math/rand"
+	"os"
 )
 
 func diceroll(command *bot.Cmd) (string, error) {
@@ -21,7 +22,7 @@ func init() {
 		"",
 		diceroll)
 	bot.RegisterCommand(
-		"diceroll@ASHelperBot",
+		"diceroll@"+os.Getenv("TELEGRAM_BOTNAME"),
 		"rolls 2D6",
 		"",
 		diceroll)
