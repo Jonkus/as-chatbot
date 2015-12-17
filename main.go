@@ -4,10 +4,10 @@ import (
 	"os"
 
 	"github.com/go-chat-bot/bot/telegram"
-	_ "jonku/alpha-strike-bot/critical"
-	_ "jonku/alpha-strike-bot/dice"
-	_ "jonku/alpha-strike-bot/motivehit"
-	_ "jonku/alpha-strike-bot/unitsearch"
+	_ "github.com/Jonkus/as-chatbot/critical"
+	_ "github.com/Jonkus/as-chatbot/dice"
+	_ "github.com/Jonkus/as-chatbot/motivehit"
+	_ "github.com/Jonkus/as-chatbot/unitsearch"
 )
 
 func main() {
