@@ -26,7 +26,7 @@ func critical(args []string) (string) {
 	crit_vehicle := map[int]string{
 		0:  "Vehicle",
 		2:  "Ammo Hit",
-		3:  "",
+		3:  "Crew Stunned",
 		4:  "Fire Control Hit",
 		5:  "Fire Control Hit",
 		6:  "No Critical Hit",
@@ -40,17 +40,17 @@ func critical(args []string) (string) {
 
 	crit_protomech := map[int]string{
 		0:  "ProtoMech",
-		2:  "",
-		3:  "",
-		4:  "",
-		5:  "",
-		6:  "",
-		7:  "",
-		8:  "",
-		9:  "",
-		10: "",
-		11: "",
-		12: "",
+		2:  "Weapon Hit",
+		3:  "Weapon Hit",
+		4:  "Fire Control Hit",
+		5:  "MP Hit",
+		6:  "No Critical Hit",
+		7:  "MP Hit",
+		8:  "No Critical Hit",
+		9:  "MP Hit",
+		10: "Unit Destroyed",
+		11: "Weapon Hit",
+		12: "Weapon Hit",
 	}
 
 	crit_aerospace := map[int]string{
@@ -70,17 +70,17 @@ func critical(args []string) (string) {
 
 	crit_dropship := map[int]string{
 		0:  "Dropship",
-		2:  "",
-		3:  "",
-		4:  "",
-		5:  "",
-		6:  "",
-		7:  "",
-		8:  "",
-		9:  "",
-		10: "",
-		11: "",
-		12: "",
+		2:  "KF Boom Hit",
+		3:  "Docking Collar Hit",
+		4:  "No Critical Hit",
+		5:  "Fire Control Hit",
+		6:  "Weapon Hit",
+		7:  "Thruster Hit",
+		8:  "Weapon Hit",
+		9:  "Door Hit",
+		10: "No Critical Hit",
+		11: "Engine Hit",
+		12: "Crew Hit",
 	}
 
 	d1 := rand.Intn(5) + 1
