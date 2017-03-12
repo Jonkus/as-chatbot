@@ -33,6 +33,7 @@ func messages(bot *telebot.Bot) {
 	case "/diceroll":
 	    response, err := diceroll()
 	    if (err==nil) {
+		log.Printf("Response: %s, Chat: %d", response, message.Chat)
             	go bot.SendMessage(message.Chat, response, nil)
 	    } else {
 		log.Printf("Error: %s", err)
@@ -40,15 +41,18 @@ func messages(bot *telebot.Bot) {
 
         case "/motive":
 	    response := motivehit(args)
+	    log.Printf("Response: %s, Chat: %d", response, message.Chat)
 	    go bot.SendMessage(message.Chat, response, nil)
 
         case "/critical":
 	    response := critical(args)
+	    log.Printf("Response: %s, Chat: %d", response, message.Chat)
 	    go bot.SendMessage(message.Chat, response, nil)
 
         case "/search":
 	    go func () {
 	        response := unitsearch(args)
+		log.Printf("Response: %s, Chat: %d", response, message.Chat)
 	        bot.SendMessage(message.Chat, response, nil)
 	    } ()
 
