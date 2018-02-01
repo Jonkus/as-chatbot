@@ -1,11 +1,13 @@
-package main
+package aslib
 
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
-func critical(args []string) (string) {
+func Critical(payload string) string {
+	args := strings.Split(payload, " ")
 	// the following are the critical hit tables
 
 	crit_mech := map[int]string{
@@ -93,7 +95,7 @@ func critical(args []string) (string) {
 	if len(args) > 0 {
 		unitType = args[0]
 	} else {
-		return("no unit-type given")
+		return ("no unit-type given")
 	}
 
 	switch unitType {
@@ -113,7 +115,7 @@ func critical(args []string) (string) {
 		crit_hit = crit_dropship[roll]
 		unitType = crit_dropship[0]
 	default:
-		return("unit-type unkown")
+		return ("unit-type unkown")
 	}
 
 	return fmt.Sprintf("[ (%d + %d) = %d ] [ Type: %s ]\n----%s----", d1, d2, roll, unitType, crit_hit)

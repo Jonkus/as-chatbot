@@ -1,11 +1,14 @@
-package main
+package aslib
 
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
-func motivehit(args []string) (string) {
+func Motivehit(payload string) string {
+
+	args := strings.Split(payload, " ")
 
 	d1 := rand.Intn(5) + 1
 	d2 := rand.Intn(5) + 1
@@ -13,9 +16,9 @@ func motivehit(args []string) (string) {
 	roll := d1 + d2
 	var movementMode string
 	if len(args) < 1 {
-	    movementMode = "t"
+		movementMode = "t"
 	} else {
-	    movementMode = args[0]
+		movementMode = args[0]
 	}
 
 	mod := 0
@@ -27,7 +30,7 @@ func motivehit(args []string) (string) {
 	case "v", "g":
 		mod = 2
 	default:
-		return("unknown movement Mode " + movementMode)
+		return ("unknown movement Mode " + movementMode)
 	}
 
 	effect := "No Effect"

@@ -1,17 +1,19 @@
-package main
+package aslib
 
 import (
-	"net/http"
 	"fmt"
+	"net/http"
+	"strings"
 )
 
-func unitsearch(args []string) (string) {
+func Unitsearch(payload string) string {
+	args := strings.Split(payload, " ")
 
 	unitID := ""
 	if len(args) > 0 {
 		unitID = args[0]
 	} else {
-		return("no UnitID given")
+		return ("no UnitID given")
 	}
 
 	res, err := http.Get("http://masterunitlist.info/Unit/Card/" + unitID + "?skill=4")
