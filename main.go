@@ -31,7 +31,7 @@ func messages(bot *telebot.Bot) {
 		go func() {
 			response, _ := aslib.Diceroll()
 			log.Printf("Req: '%s', Resp: %#v, Sender: %s", m.Text, response, m.Sender.Username)
-			bot.Send(m.Sender, response)
+			bot.Send(m.Chat, response)
 		}()
 	})
 
@@ -39,7 +39,7 @@ func messages(bot *telebot.Bot) {
 		go func() {
 			response := aslib.Motivehit(m.Payload)
 			log.Printf("Req: '%s', Resp: %#v, Sender: %s", m.Text, response, m.Sender.Username)
-			bot.Send(m.Sender, response)
+			bot.Send(m.Chat, response)
 		}()
 	})
 
@@ -47,7 +47,7 @@ func messages(bot *telebot.Bot) {
 		go func() {
 			response := aslib.Critical(m.Payload)
 			log.Printf("Req: '%s', Resp: %#v, Sender: %s", m.Text, response, m.Sender.Username)
-			bot.Send(m.Sender, response)
+			bot.Send(m.Chat, response)
 		}()
 	})
 
@@ -55,7 +55,7 @@ func messages(bot *telebot.Bot) {
 		go func() {
 			response := aslib.Unitsearch(m.Payload)
 			log.Printf("Req: '%s', Resp: %#v, Sender: %s", m.Text, response, m.Sender.Username)
-			bot.Send(m.Sender, response)
+			bot.Send(m.Chat, response)
 		}()
 	})
 
